@@ -6,3 +6,61 @@
 body {
   background-color: #f8f9ff;
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink {
+  animation: blink 1s infinite;
+}
+/* Marquee container */
+.marquee-container {
+  height: 120px; /* Set container height to fit icons */
+  overflow: hidden; /* Prevent overflow */
+  width: 100%;
+}
+
+.marquee {
+  display: flex;
+  align-items: center;
+  animation: marquee-scroll 30s linear infinite;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.icon {
+  width: 100px; /* Adjusted size for responsiveness */
+  height: 100px;
+  object-fit: contain;
+  flex-shrink: 0; /* Prevent icons from shrinking */
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .icon {
+    width: 50px; /* Smaller icons for mobile */
+    height: 50px;
+  }
+  .marquee-container {
+    height: 100px; /* Reduce container height */
+  }
+  .marquee {
+    animation: marquee-scroll 10s linear infinite;
+  }
+}

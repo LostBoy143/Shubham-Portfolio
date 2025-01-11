@@ -47,7 +47,7 @@ const Navbar = () => {
             About Me
           </a>
           <a
-            href="#skills-section"
+            href="#skills"
             className="hover:text-black duration-300 hidden sm:block"
           >
             Skills
@@ -112,7 +112,7 @@ const Navbar = () => {
             About me
           </a>
           <a
-            href="#skills-section"
+            href="#skills"
             className=" duration-300 hover:text-white border-b-[1px] pb-2 w-full text-right border-gray-500"
           >
             Skills
