@@ -4,6 +4,8 @@ import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
 import Skills from "../components/Skills";
 import Button from "../components/Button";
+import Experience from "../components/Experience";
+import Projects from "../components/Projects";
 
 const Home = () => {
   return (
@@ -12,6 +14,8 @@ const Home = () => {
       <HeroSection />
       <Skills />
       <Button />
+      <Experience />
+      <Projects />
     </div>
   );
 };

@@ -59,7 +59,7 @@ const Navbar = () => {
             Experience
           </a>
           <a
-            href="projects-section"
+            href="#projects-section"
             className="hover:text-black duration-300 hidden sm:block"
           >
             Projects
@@ -118,13 +118,13 @@ const Navbar = () => {
             Skills
           </a>
           <a
-            href="experience-section"
+            href="#experience-section"
             className=" duration-300 hover:text-white border-b-[1px] pb-2 w-full text-right border-gray-500"
           >
             Experience
           </a>
           <a
-            href="projects-section"
+            href="#projects-section"
             className=" duration-300 hover:text-white border-b-[1px] pb-2 w-full text-right border-gray-500"
           >
             Projects

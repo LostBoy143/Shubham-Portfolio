@@ -11,13 +11,13 @@ const DownloadResumeButton = () => {
 
   return (
     <div
-      className={`fixed right-3 bottom-3 sm:bottom-6 sm:right-6 bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg ${
+      className={`fixed z-10 right-3 bottom-3 sm:bottom-6 sm:right-6 bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-lg ${
         isExpanded
           ? "w-56 h-14 rounded-lg px-4 py-2"
           : "w-16 h-16 rounded-full animate-bounce"
-      } flex items-center justify-center cursor-pointer transform hover:scale-105 transition-all duration-300 ease-in-out ${
+      } flex items-center justify-center cursor-pointer transform hover:scale-110 transition-all duration-300 ease-in-out ${
         !isExpanded
-          ? "shadow-[0px_0px_15px_5px_rgba(139,92,246,0.7)]"
+          ? "shadow-[0px_0px_25px_8px_rgba(100,100,255,0.5)]"
           : ""
       }`}
       onClick={handleClick}
@@ -34,7 +34,7 @@ const DownloadResumeButton = () => {
           </a>
           <button
             onClick={handleClick}
-            className="ml-2 bg-white text-purple-500 rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs"
+            className="ml-2 bg-white text-black rounded-full w-6 h-6 flex items-center justify-center font-bold text-xs"
             title="Minimize"
           >
             ✕
@@ -42,9 +42,9 @@ const DownloadResumeButton = () => {
         </div>
       ) : (
         <img
-          src="./download.png"
+          src="./down-arrow.png"
           alt="download button"
-          className="w-8 h-8"
+          className="w-5 h-5"
         />
       )}
     </div>
