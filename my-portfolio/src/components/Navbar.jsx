@@ -73,11 +73,15 @@ const Navbar = () => {
           <img
             id="menu"
             src="./favicon.png"
+            alt="logo"
+            loading="lazy"
             className="h-[28px] sm:hidden"
           ></img>
           <img
             id="menu"
             src="./menu.png"
+            alt="menu-bar"
+            loading="lazy"
             className="h-[28px] sm:hidden cursor-pointer"
             onClick={showSidebar}
           ></img>
@@ -96,11 +100,13 @@ const Navbar = () => {
             <img
               id="menu"
               src="./favicon.png"
+              loading="lazy"
               className="h-[28px] sm:hidden"
             ></img>
             <img
               id="menu"
               src="./cross.png"
+              loading="lazy"
               className="h-[28px] sm:hidden cursor-pointer"
               onClick={hideSidebar}
             ></img>

@@ -9,7 +9,7 @@ const Experience = () => {
       duration: "Jul 2024 - Nov 2024",
       logo: "./freelance.png", // Replace with the actual path to the logo
       details: [
-        "Developed a responsive and engaging landing page for a company.",
+        "Developed  responsive and engaging landing pages for businesses.",
         "Implemented modern UI design using React.js and Tailwind CSS.",
         "Ensured cross-browser compatibility and improved website performance.",
       ],

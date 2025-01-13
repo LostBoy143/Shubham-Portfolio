@@ -28,7 +28,7 @@ const HeroSection = () => {
                   }}
                 >
                   <div
-                    className="text-xs sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
+                    className="text-[20px] sm:text-base md:text-xl lg:text:3xl xl:text-5xl font-bold"
                     style={{
                       whiteSpace: "nowrap",
                     }}
@@ -92,7 +92,7 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-                <span className="block blink rounded-sm w-[4px] sm:w-[6px] h-4 sm:h-6 xl:h-12 bg-blue-500"></span>
+                <span className="block blink rounded-sm w-[4px] sm:w-[6px] h-4 mt-2 sm:mt-0 sm:h-6 xl:h-12 bg-blue-500"></span>
               </div>
             </div>
             <p className="md:text-2xl text-xl text-center">

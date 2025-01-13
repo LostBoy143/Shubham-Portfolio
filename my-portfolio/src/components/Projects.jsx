@@ -65,17 +65,18 @@ const Projects = () => {
           {data.map((project, idx) => (
             <div
               key={idx}
-              className="md:mx-[100px] md:my-[50px] rounded-2xl md:flex md:flex-row flex justify-center items-center flex-col bg-[#FFFFFF] shadow-lg mx-[30px] my-[10px]"
+              className="md:mx-[100px] md:my-[50px] rounded-2xl md:flex md:flex-row flex justify-center items-center flex-col bg-[#FFFFFF] shadow-lg hover:shadow-2xl duration-700 mx-[30px] my-[10px]"
             >
               <div className="md:w-1/2 w-fit md:m-10 mx-5 mt-8">
                 <img
                   src={project.image}
                   alt={project.name}
+                  loading="lazy"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
               <div className="flex flex-col justify-start items-center md:mt-[60px] p-5 gap-5 md:w-1/2">
-                <p className="md:text-[41px] text-[20px] font-bold">
+                <p className="md:text-[41px] text-[20px] font-bold ">
                   {project.name}
                 </p>
                 <p className="md:text-[20px] text-[15px] font-extralight text-center w-full">
@@ -83,12 +84,12 @@ const Projects = () => {
                 </p>
                 <div className="flex flex-col gap-5 text-white text-center">
                   {/* Dynamically Render Tech Stack */}
-                  <div className="font-bold flex md:gap-10 gap-4 flex-wrap justify-center">
+                  <div className="font-bold flex  flex-wrap justify-center">
                     {project.tech.map(
                       (tech, techIdx) => (
                         <div
                           key={techIdx}
-                          className="rounded-2xl bg-[#A99CE7] md:w-fit md:px-3 px-4 hover:scale-105 transition-all cursor-pointer md:text-[15px] text-[10px]"
+                          className="rounded-2xl mr-3 mt-2 bg-[#6B5FB4] md:w-fit md:px-3 px-4 hover:scale-105 transition-all cursor-pointer md:text-[15px] text-[10px]"
                         >
                           {tech}
                         </div>
@@ -97,7 +98,7 @@ const Projects = () => {
                   </div>
                   {/* Project Link */}
                   <div className="flex justify-center items-center font-bold">
-                    <button className="rounded-2xl bg-[#B3C8FF] md:w-fit px-8 hover:scale-105 transition-all cursor-pointer md:text-[15px] text-[10px]">
+                    <button className="rounded-2xl  md:w-fit px-8  transition-all cursor-pointer md:text-[15px] text-[10px]  shadow-xl bg-gradient-to-r from-purple-500 to-blue-500 text-white  py-1  transform duration-500 ease-in-out hover:scale-110 hover:from-blue-500 hover:to-purple-500 animate-float">
                       <a
                         href={project.link}
                         target="_blank"
