@@ -7,7 +7,7 @@ import { inject } from "@vercel/analytics";
 
 inject();
 
-const trackingID = "G-C8ZR0EYF8Z"; // Replace with your actual ID
+const trackingID = "G-EDFDY8QNEZ"; // Replace with your actual ID
 ReactGA.initialize(trackingID);
 
 createRoot(
