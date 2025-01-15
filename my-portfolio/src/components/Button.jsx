@@ -25,7 +25,7 @@ const DownloadResumeButton = () => {
       {isExpanded ? (
         <div className="flex items-center gap-2">
           <a
-            href="./Shubham_Singh-Resume.pdf" // Replace with the actual path to your resume
+            href="./Shubham_Singh-resume.pdf"
             download
             className="font-bold text-[10px] sm:text-sm transition-opacity duration-300 ease-in-out"
             title="Download Resume"
