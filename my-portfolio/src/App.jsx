@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from "react";
-import ReactGA from "react-ga";
+import React from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
@@ -13,13 +12,6 @@ import Social from "./components/Social";
 import Footer from "./components/Footer";
 
 function App() {
-  useEffect(() => {
-    ReactGA.pageview(
-      window.location.pathname +
-        window.location.search
-    );
-  }, []);
-
   return (
     <div>
       <Navbar />
