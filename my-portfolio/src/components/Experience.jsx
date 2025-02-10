@@ -4,14 +4,16 @@ import React from "react";
 const Experience = () => {
   const experiences = [
     {
-      company: "Freelancing",
-      role: "Frontend Developer",
-      duration: "Jul 2024 - Nov 2024",
-      logo: "./freelance.png", // Replace with the actual path to the logo
+      company: "Rashi Technologies",
+      role: "Frontend Developer Intern",
+      duration: "Feb 2025 - Present",
+      logo: "./rashi_logo.jpg", // Replace with the actual path to the logo
       details: [
-        "Developed  responsive and engaging landing pages for businesses.",
-        "Implemented modern UI design using React.js and Tailwind CSS.",
-        "Ensured cross-browser compatibility and improved website performance.",
+        "Built dynamic, mobile-first user interfaces using Next.js and React.",
+        "Leveraged TypeScript to enhance code quality and ensure robust, type-safe development.",
+        " Implemented server-side rendering (SSR) and static site generation (SSG) to improve page load times.",
+        "Collaborated with backend teams to integrate RESTful APIs and manage data flows effectively.",
+        "Participated in code reviews and agile sprints, contributing to a high-quality, maintainable codebase.",
       ],
     },
     {
@@ -23,6 +25,17 @@ const Experience = () => {
         "Collaborated with the design team to build pixel-perfect UI components.",
         "Integrated dynamic functionalities using React.js.",
         "Optimized code for faster load times and better user experience.",
+      ],
+    },
+    {
+      company: "Freelancing",
+      role: "Frontend Developer",
+      duration: "Jul 2024 - Nov 2024",
+      logo: "./freelance.png", // Replace with the actual path to the logo
+      details: [
+        "Developed  responsive and engaging landing pages for businesses.",
+        "Implemented modern UI design using React.js and Tailwind CSS.",
+        "Ensured cross-browser compatibility and improved website performance.",
       ],
     },
   ];
