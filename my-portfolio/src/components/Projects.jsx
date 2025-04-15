@@ -3,6 +3,24 @@ import React from "react";
 
 const data = [
   {
+    name: "AI Code Reviewer",
+    image: "./code-review.png",
+    description:
+      " A web tool that uses AI to analyze code snippets and provide instant feedback on quality, performance, and best practices.",
+    tech: [
+      "React",
+      "ThreeJs",
+      "Tailwind",
+      "Gemini",
+      "Nodejs",
+      "Expressjs",
+      "Github",
+      "Vercel",
+      "render",
+    ],
+    link: "https://ai-code-review-blush.vercel.app/",
+  },
+  {
     name: "DigiGrove",
     image: "./digigrove.png",
     description:
@@ -19,7 +37,7 @@ const data = [
     name: "Attyre",
     image: "./att-img.png",
     description:
-      "A website which consists of color analysis tool.",
+      "An AI-powered web app that recommends optimal clothing color palettes based on a user’s skin tone, hair, and eye color using image analysis and color theory.",
     tech: [
       "React",
       "Tailwind",
@@ -32,7 +50,7 @@ const data = [
     name: "Zappy",
     image: "./zappy.png",
     description:
-      "An Online food ordering website with payment gateway",
+      " An online food delivery platform built for speed and simplicity, offering real-time restaurant browsing, order tracking, and a seamless checkout experience.",
     tech: [
       "React",
       "Tailwind",
@@ -43,14 +61,14 @@ const data = [
     ],
     link: "https://github.com/LostBoy143/zappy",
   },
-  {
-    name: "textUtils",
-    image: "./taxtutils.png",
-    description:
-      "A website for text analysis tools",
-    tech: ["React", "Tailwind", "Github"],
-    link: "https://textu-tils.vercel.app/",
-  },
+  // {
+  //   name: "textUtils",
+  //   image: "./taxtutils.png",
+  //   description:
+  //     "A website for text analysis tools",
+  //   tech: ["React", "Tailwind", "Github"],
+  //   link: "https://textu-tils.vercel.app/",
+  // },
 ];
 
 const Projects = () => {
@@ -65,7 +83,7 @@ const Projects = () => {
           {data.map((project, idx) => (
             <div
               key={idx}
-              className="md:mx-[100px] md:my-[50px] rounded-2xl md:flex md:flex-row flex justify-center items-center flex-col bg-[#FFFFFF] shadow-lg hover:shadow-2xl duration-700 mx-[30px] my-[10px]"
+              className="md:mx-[100px] md:my-[50px] rounded-2xl md:flex md:flex-row flex justify-center items-center   flex-col bg-[#FFFFFF] shadow-lg hover:shadow-2xl duration-700 mx-[30px] my-[10px]"
             >
               <div className="md:w-1/2 w-fit md:m-10 mx-5 mt-8">
                 <img
@@ -75,7 +93,7 @@ const Projects = () => {
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
               </div>
-              <div className="flex flex-col justify-start items-center md:mt-[60px] p-5 gap-5 md:w-1/2">
+              <div className=" flex  flex-col justify-start items-center md:mt-[10px] p-5 gap-5 md:w-1/2">
                 <p className="md:text-[41px] text-[20px] font-bold ">
                   {project.name}
                 </p>
