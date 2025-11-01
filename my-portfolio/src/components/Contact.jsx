@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,14 +15,14 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_1bejh8l", // EmailJS service ID
-        "template_qmkyc6f", //  EmailJS template ID
+        "service_1bejh8l",
+        "template_qmkyc6f",
         {
           name: formData.name,
           reply_to: formData.email,
           message: formData.message,
         },
-        "hck1bHifeHTE1PZ93" // EmailJS public key
+        "hck1bHifeHTE1PZ93"
       )
       .then(
         (result) => {
@@ -30,7 +31,7 @@ const Contact = () => {
             name: "",
             email: "",
             message: "",
-          }); // Clear the form
+          });
         },
         (error) => {
           alert(
@@ -47,49 +48,75 @@ const Contact = () => {
   };
 
   return (
-    <div
+    <section
       id="contact-section"
-      className="bg-gradient-to-b w-full from-[#F5E9FF] to-white md:pt-[30px] pb-[50px] px-5 sm:px-40 pt-[50px] flex flex-col"
+      className="relative px-6 py-20 sm:px-12 lg:px-24 scroll-mt-20"
     >
-      <p className="md:text-[41px] text-[25px] text-black font-bold text-center mb-10">
-        Contact Me.
-      </p>
-      <div
-        id="form-container"
-        className="w-full min-h-[500px] bg-gradient-to-b from-[#F5E9FF] to-[#e6ecfd] rounded-2xl shadow-lg hover:shadow-2xl duration-700 flex flex-col sm:flex-row justify-center items-center"
+      <div className="pointer-events-none absolute inset-x-0 top-12 h-72 rounded-full bg-gradient-to-r from-purple-500/12 via-blue-500/12 to-emerald-400/12 blur-3xl" />
+      <motion.p
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="font-heading md:text-[44px] text-[28px] text-black dark:text-white font-bold text-center mb-10"
       >
-        <div
-          id="left-container"
-          className="cursor-pointer relative w-full sm:py-0 py-20 sm:w-1/2 sm:min-h-[500px] rounded-tl-2xl sm:rounded-bl-2xl rounded-tr-2xl sm:rounded-tr-none flex items-center justify-center overflow-hidden"
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 hover:scale-110"
-            style={{
-              backgroundImage:
-                "url('./contact-bg.avif')", // Replace with the actual image path
-              backgroundBlendMode: "darken",
-              backgroundColor:
-                "rgba(0, 0, 0, 0.5)", // Adds a dark overlay
-            }}
-          ></div>
-          <p
-            className="relative z-10 text-white text-[20px] sm:text-[22px] leading-relaxed font-medium px-6 md:px-10 text-center"
-            style={{
-              textShadow:
-                "2px 2px 4px rgba(0, 0, 0, 0.7)", // Enhance text visibility
-            }}
-          >
-            Got a question, a suggestion, or just
-            want to chat? Fill out the form, and
-            I&apos;ll get back to you shortly!
-          </p>
+        Contact Me.
+      </motion.p>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        id="form-container"
+        className="relative mx-auto flex w-full max-w-6xl flex-col overflow-hidden rounded-[36px] border border-white/70 bg-white/95 shadow-[0_25px_80px_rgba(99,102,241,0.25)] backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-[0_25px_80px_rgba(99,102,241,0.35)] md:flex-row"
+      >
+        <div className="relative flex w-full items-center justify-center overflow-hidden bg-gradient-to-br from-purple-500/25 via-blue-500/15 to-transparent p-10 md:w-1/2">
+          <div className="pointer-events-none absolute -top-24 left-10 h-48 w-48 rounded-full bg-white/35 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 right-12 h-40 w-40 rounded-full bg-emerald-400/30 blur-3xl" />
+
+          <div className="relative flex w-full max-w-sm flex-col items-center gap-6 text-center">
+            <div className="relative overflow-hidden rounded-[28px] border border-white/40 bg-white/10 p-3 backdrop-blur-md">
+              <div className="absolute inset-0 rounded-[28px] bg-gradient-to-br from-white/50 via-transparent to-white/20 opacity-70" />
+              <div className="relative h-[260px] w-[260px]">
+                <img
+                  src="./pro_img.webp"
+                  alt="Shubham Singh"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full rounded-[24px] object-cover opacity-60"
+                />
+                <img
+                  src="./pro_img.webp"
+                  alt="Shubham Singh"
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full rounded-[24px] object-cover mix-blend-screen opacity-50"
+                />
+                <div className="absolute inset-0 rounded-[24px] bg-gradient-to-t from-purple-500/30 via-transparent to-blue-500/20 mix-blend-overlay" />
+              </div>
+              <div className="pointer-events-none absolute inset-0 rounded-[24px] bg-white/10 mix-blend-soft-light" />
+            </div>
+            <p className="font-heading text-lg">Let’s build something ambitious.</p>
+            <p className="text-sm text-slate-700 dark:text-white/80">
+              Available for freelance and product engagements. Tell me about the problem you’re solving and we’ll map the solution.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 text-[11px] text-slate-600 dark:text-white/70">
+              <span className="rounded-full border border-purple-300/60 bg-white/80 px-3 py-1 dark:border-white/30 dark:bg-white/10">Full Stack</span>
+              <span className="rounded-full border border-purple-300/60 bg-white/80 px-3 py-1 dark:border-white/30 dark:bg-white/10">AI Systems</span>
+              <span className="rounded-full border border-purple-300/60 bg-white/80 px-3 py-1 dark:border-white/30 dark:bg-white/10">Motion UX</span>
+            </div>
+          </div>
         </div>
 
         <div
           id="right-container"
-          className="w-full sm:w-1/2 sm:h-[100%] rounded-bl-2xl rounded-br-2xl sm:rounded-bl-none sm:rounded-tr-2xl sm:pt-10"
+          className="w-full bg-white/90 dark:bg-black/70 sm:w-1/2 sm:py-12"
         >
-          <p className="text text-center mt-3  font-extrabold text-24 sm:text-[28px] mb-2 sm:mb-8  tracking-wide drop-shadow-md text">
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="font-heading text-center mt-6 font-extrabold text-24 sm:text-[30px] mb-2 sm:mb-8 tracking-wide text-slate-900 dark:text-white"
+          >
             <span>G</span>
             <span>e</span>
             <span>t</span>
@@ -103,47 +130,52 @@ const Contact = () => {
             <span>c</span>
             <span>h</span>
             <span>.</span>
-          </p>
+          </motion.p>
 
           <form onSubmit={sendEmail}>
-            <div className="flex flex-col gap-5 p-5">
-              <input
+            <div className="flex flex-col gap-5 px-6 pb-8">
+              <motion.input
+                whileFocus={{ scale: 1.02 }}
                 required
                 type="text"
                 name="name"
                 placeholder="Name"
-                className="p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="rounded-xl border border-gray-200/70 bg-white/90 p-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-white dark:placeholder-gray-400"
                 onChange={handleChange}
                 value={formData.name}
               />
-              <input
+              <motion.input
+                whileFocus={{ scale: 1.02 }}
                 required
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="rounded-xl border border-gray-200/70 bg-white/90 p-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-white dark:placeholder-gray-400"
                 onChange={handleChange}
                 value={formData.email}
               />
-              <textarea
+              <motion.textarea
+                whileFocus={{ scale: 1.02 }}
                 required
                 name="message"
                 placeholder="Message"
-                className="p-3 rounded-lg sm:h-28 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="rounded-xl border border-gray-200/70 bg-white/90 p-3 text-sm shadow-sm transition focus:outline-none focus:ring-2 focus:ring-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-white dark:placeholder-gray-400"
                 onChange={handleChange}
                 value={formData.message}
-              ></textarea>
-              <button
+              ></motion.textarea>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-blue-500 hover:to-purple-500  text-white p-3 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-5 py-3 text-sm font-semibold text-white shadow-lg transition hover:from-blue-500 hover:to-purple-500"
               >
                 Send
-              </button>
+              </motion.button>
             </div>
           </form>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </section>
   );
 };
 

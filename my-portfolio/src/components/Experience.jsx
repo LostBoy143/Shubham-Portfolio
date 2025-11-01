@@ -1,101 +1,121 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   const experiences = [
     {
       company: "Rashi Technologies",
-      role: "Frontend Developer Intern",
-      duration: "Feb 2025 - Present",
-      logo: "./rashi_logo.jpg", // Replace with the actual path to the logo
-      details: [
-        "Built dynamic, mobile-first user interfaces using Next.js and React.",
-        "Leveraged TypeScript to enhance code quality and ensure robust, type-safe development.",
-        " Implemented server-side rendering (SSR) and static site generation (SSG) to improve page load times.",
-        "Collaborated with backend teams to integrate RESTful APIs and manage data flows effectively.",
-        "Participated in code reviews and agile sprints, contributing to a high-quality, maintainable codebase.",
+      role: "Full Stack Engineer",
+      duration: "Feb 2025 — Present",
+      logo: "./rashi_logo.jpg",
+      summary:
+        "Leading end-to-end development of analytics experiences and AI-driven automations for enterprise clients.",
+      achievements: [
+        "Rebuilt mission dashboards with Next.js + TypeScript, improving load times by 42% and boosting KPI adoption.",
+        "Designed Node.js microservices with event-driven workflows; shipped AI agents that auto-generate weekly reports.",
+        "Established design system foundations and DX tooling that increased team velocity by 30%.",
       ],
     },
     {
-      company: "Attyre",
-      role: "Frontend Developer Intern",
-      duration: "Nov 2024 - Dec 2024",
-      logo: "./attyre.png", // Replace with the actual path to the logo
-      details: [
-        "Collaborated with the design team to build pixel-perfect UI components.",
-        "Integrated dynamic functionalities using React.js.",
-        "Optimized code for faster load times and better user experience.",
+      company: "Freelance Collaborations",
+      role: "Product Engineer",
+      duration: "Jul 2024 — Feb 2025",
+      logo: "./freelance.png",
+      summary:
+        "Partnered with founders to launch marketing sites, SaaS MVPs, and custom internal tools under tight timelines.",
+      achievements: [
+        "Delivered brand-heavy storytelling sites with 3D and motion that drove +60% signups for early-stage startups.",
+        "Implemented real-time dashboards, billing, and auth using serverless (Supabase/Firebase) and Stripe integration.",
+        "Crafted AI copilots (chat & content) using OpenAI/LangChain to automate support and content workflows.",
       ],
     },
     {
-      company: "Freelancing",
-      role: "Frontend Developer",
-      duration: "Jul 2024 - Nov 2024",
-      logo: "./freelance.png", // Replace with the actual path to the logo
-      details: [
-        "Developed  responsive and engaging landing pages for businesses.",
-        "Implemented modern UI design using React.js and Tailwind CSS.",
-        "Ensured cross-browser compatibility and improved website performance.",
+      company: "Open Source & Side Projects",
+      role: "Builder & Maintainer",
+      duration: "2023 — Present",
+      logo: "./github-logo.png",
+      summary:
+        "Experimenting with immersive UX, AI-native tooling, and documenting learnings for the community.",
+      achievements: [
+        "Maintaining AI code-reviewer that lint/auto-fixes repo PRs, now adopted by 400+ developers.",
+        "Launched open boilerplates with tRPC, Prisma, and Vercel edge functions to help teams ship faster.",
+        "Published UI experiments mixing Three.js, GLSL shaders, and Framer Motion for futuristic landing pages.",
       ],
     },
   ];
 
   return (
-    <div
+    <section
       id="experience-section"
-      className="bg-gradient-to-b from-[#F5E9FF] to-[#e6ecfd] px-5 sm:px-32 py-10 flex justify-center items-center min-h-screen"
+      className="relative px-6 py-20 sm:px-12 lg:px-24 scroll-mt-20"
     >
-      <div className="w-full max-w-6xl">
-        <p className="md:text-[41px] text-[25px] text-black font-bold text-center mb-10">
-          My Journey So Far
-        </p>
+      <div className="pointer-events-none absolute inset-x-0 top-16 h-72 rounded-full bg-gradient-to-r from-purple-500/12 via-blue-500/12 to-emerald-400/12 blur-3xl" />
+
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-14">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-5 text-center"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-purple-100/80 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-purple-700">
+            Journey
+          </span>
+          <h2 className="font-heading text-[32px] sm:text-[44px] font-semibold text-slate-900 dark:text-white">
+            Every chapter sharpened my craft in building intelligent, end-to-end products.
+          </h2>
+          <p className="mx-auto max-w-3xl text-base text-slate-600 dark:text-slate-300">
+            From enterprise dashboards to founder-led launches, here’s how each milestone pushed my engineering & design thinking forward.
+          </p>
+        </motion.div>
+
         <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-[30px] top-0 w-[2px] bg-blue-500 h-full"></div>
+          <div className="absolute left-1/2 top-0 hidden h-full -translate-x-1/2 border-l border-white/60 dark:border-white/10 lg:block" />
 
-          {experiences.map((exp, index) => (
-            <div
-              key={index}
-              className="flex md:gap-10 gap-5 mb-10 relative md:pl-20 pl-12"
-            >
-              {/* Timeline Dot */}
-              <div className="absolute left-[23px] top-2 w-4 h-4 bg-blue-500 rounded-full"></div>
-
-              {/* Logo */}
-              <img
-                src={exp.logo}
-                alt={`${exp.company} logo`}
-                className="md:w-[60px] md:h-[60px] w-[40px] h-[40px] object-contain"
-              />
-
-              {/* Content */}
-              <div className="flex-1">
-                <div className="flex justify-between items-start md:gap-20 gap-5">
-                  <div>
-                    <h3 className="text-[20px] md:text-[25px] font-bold text-black">
-                      {exp.company}
-                    </h3>
-                    <p className="text-[16px] text-gray-700">
-                      {exp.role}
-                    </p>
+          <div className="space-y-12">
+            {experiences.map((exp, idx) => (
+              <motion.div
+                key={exp.company}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className={`relative flex flex-col gap-6 lg:flex-row lg:items-start ${idx % 2 === 0 ? 'lg:flex-row-reverse' : ''}`}
+              >
+                <div className="relative flex-1 rounded-[28px] border border-white/70 bg-white/95 p-6 shadow-[0_20px_60px_rgba(99,102,241,0.2)] backdrop-blur dark:border-white/10 dark:bg-white/5 dark:shadow-[0_20px_60px_rgba(99,102,241,0.35)]">
+                  <div className="absolute -top-10 right-10 hidden h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/20 via-blue-500/10 to-teal-400/15 blur-2xl lg:block" />
+                  <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-1 text-left">
+                      <p className="font-heading text-lg text-slate-900 dark:text-white">{exp.company}</p>
+                      <p className="text-sm font-semibold text-purple-500 dark:text-purple-300">{exp.role}</p>
+                      <p className="text-xs uppercase tracking-[0.3em] text-slate-400 dark:text-slate-500">{exp.duration}</p>
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-300">{exp.summary}</p>
+                    <div className="grid gap-3 text-sm text-slate-600 dark:text-slate-200">
+                      {exp.achievements.map((point, i) => (
+                        <div key={i} className="flex items-start gap-3 rounded-2xl border border-purple-200/50 bg-white/85 px-4 py-3 shadow-sm transition group-hover:border-purple-400 dark:border-white/10 dark:bg-white/10">
+                          <span className="mt-1 h-[6px] w-[6px] rounded-full bg-purple-500/70"></span>
+                          <span>{point}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-[14px] text-gray-500">
-                    {exp.duration}
-                  </p>
                 </div>
-                <ul className="list-disc mt-3 pl-5 text-gray-800 md:text-[18px] text-[14px]">
-                  {exp.details.map(
-                    (detail, idx) => (
-                      <li key={idx}>{detail}</li>
-                    )
-                  )}
-                </ul>
-              </div>
-            </div>
-          ))}
+
+                <div className="relative flex flex-col items-center gap-4 self-start lg:self-center">
+                  <div className="hidden h-10 w-10 rounded-full border border-purple-200/60 bg-white/90 p-2 shadow-sm dark:border-white/10 dark:bg-white/10 lg:flex">
+                    <img src={exp.logo} alt={`${exp.company} logo`} className="h-full w-full object-contain" />
+                  </div>
+                  <div className="hidden flex-1 border-l border-dashed border-purple-200/70 dark:border-white/20 lg:block" />
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

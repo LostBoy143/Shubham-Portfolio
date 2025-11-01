@@ -1,29 +1,44 @@
-/* eslint-disable no-unused-vars */
-import React from "react";
 import "./App.css";
+import {BrowserRouter as Router,Routes,Route, useLocation} from "react-router-dom";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import Skills from "./components/Skills";
-import Button from "./components/Button";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Social from "./components/Social";
 import Footer from "./components/Footer";
+import Home from "./components/Home";
+import ProjectsPage from "./components/ProjectsPage";
+import { useEffect } from "react";
+
+function ScrollToSection() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    } else if (location.pathname === '/') {
+      window.scrollTo(0, 0);
+    }
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <Skills />
-      <Button />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Social />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <Router>
+        <ScrollToSection />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/projects" element={<ProjectsPage/>}/>
+        </Routes>
+        <Footer/>
+      </Router>
+    </ThemeProvider>
   );
 }
 

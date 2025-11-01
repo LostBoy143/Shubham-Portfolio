@@ -9,6 +9,9 @@ html {
 body {
   background-color: #f8f9ff;
 }
+body.dark {
+  background-color: #000000;
+}
 @keyframes blink {
   0% {
     opacity: 1;
@@ -152,3 +155,35 @@ body {
     transform: rotateY(360deg);
   }
 }
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Modern Animated Gradient Glow */
+.modern-gradient-glow {
+  background: linear-gradient(
+    90deg,
+    rgba(147, 51, 234, 0.8) 0%,
+    rgba(59, 130, 246, 0.8) 25%,
+    rgba(16, 185, 129, 0.8) 50%,
+    rgba(59, 130, 246, 0.8) 75%,
+    rgba(147, 51, 234, 0.8) 100%
+  );
+  background-size: 300% 100%;
+  animation: modern-glow-shift 4s ease-in-out infinite;
+  box-shadow: 0 0 15px rgba(147, 51, 234, 0.6), 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+@keyframes modern-glow-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+    opacity: 1;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 0.8;
+  }
+}
+
