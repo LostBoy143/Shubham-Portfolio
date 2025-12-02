@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { PixelatedCanvas } from "./Canvas";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -51,12 +52,12 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col gap-3 sm:flex-row"
           >
-            <a
-              href="/projects"
+            <Link
+              to="/projects"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:scale-[1.03] hover:from-blue-500 hover:to-purple-500"
             >
               View Project Showcase
-            </a>
+            </Link>
             <a
               href="#contact-section"
               className="inline-flex items-center justify-center rounded-full border border-purple-200/70 px-6 py-3 text-sm font-semibold text-slate-700 transition hover:-translate-y-[2px] hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:text-slate-100 dark:hover:border-purple-400"
