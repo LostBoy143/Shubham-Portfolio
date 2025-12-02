@@ -48,7 +48,7 @@ const Navbar = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative w-auto mx-3 sm:mx-auto sm:w-[92%] max-w-6xl"
+          className="relative w-[calc(100%-1.5rem)] mx-auto sm:w-[92%] max-w-6xl"
         >
           <div className="modern-gradient-border absolute inset-0 rounded-[30px]" />
           <div className="hidden sm:block modern-gradient-halo absolute -inset-3 rounded-[36px]" />
