@@ -51,7 +51,7 @@ const Navbar = () => {
           className="relative w-[85%] sm:w-[92%] max-w-6xl"
         >
           <div className="modern-gradient-border absolute inset-0 rounded-[30px]" />
-          <div className="modern-gradient-halo absolute -inset-1 sm:-inset-3 rounded-[36px]" />
+          <div className="hidden sm:block modern-gradient-halo absolute -inset-3 rounded-[36px]" />
           <div className="absolute inset-[1px] rounded-[28px] bg-white/95 shadow-[0_12px_45px_rgba(148,163,255,0.25)] backdrop-blur-2xl dark:bg-black/85 dark:shadow-[0_12px_45px_rgba(99,102,241,0.35)]" />
 
           <div className="relative flex items-center gap-4 rounded-[28px] px-4 py-3 text-[12px] text-slate-800 dark:text-gray-200 sm:px-6">

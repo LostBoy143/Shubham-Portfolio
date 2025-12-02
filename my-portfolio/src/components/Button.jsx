@@ -18,13 +18,13 @@ const DownloadResumeButton = () => {
       className={`fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-30 flex flex-col gap-3 text-[12px] font-semibold`}
     >
       <div className="relative overflow-hidden rounded-[26px] border border-white/70 bg-white/95 p-[2px] shadow-[0_15px_45px_rgba(99,102,241,0.35)] backdrop-blur dark:border-white/10 dark:bg-white/10 dark:shadow-[0_15px_45px_rgba(99,102,241,0.4)]">
-        <div className="flex h-full w-full items-center gap-3 rounded-[24px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-3 py-2 text-white dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg">
+        <div className="flex h-full w-full items-center gap-2 sm:gap-3 rounded-[20px] sm:rounded-[24px] bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 px-2.5 py-1.5 sm:px-3 sm:py-2 text-white dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-900/90">
+          <div className="flex h-8 w-8 sm:h-10 sm:w-10 items-center justify-center rounded-xl sm:rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg">
             <motion.svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="h-4 w-4"
+              className="h-3.5 w-3.5 sm:h-4 sm:w-4"
               animate={{ y: [0, -2, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -33,13 +33,13 @@ const DownloadResumeButton = () => {
             </motion.svg>
           </div>
           <div className="flex flex-1 flex-col">
-            <span className="text-xs uppercase tracking-[0.3em] text-purple-300">Resume</span>
-            <span className="font-heading text-[15px]">Download CV</span>
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.3em] text-purple-300">Resume</span>
+            <span className="font-heading text-[13px] sm:text-[15px]">Download CV</span>
           </div>
           <a
             href="/Resume-SHUBHAM_SINGH.pdf"
             download
-            className="inline-flex items-center gap-2 rounded-full bg-white/90 px-4 py-1.5 text-[11px] font-semibold text-purple-600 shadow-sm transition hover:-translate-y-[2px] hover:text-purple-500"
+            className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 sm:px-4 sm:py-1.5 text-[10px] sm:text-[11px] font-semibold text-purple-600 shadow-sm transition hover:-translate-y-[2px] hover:text-purple-500"
           >
             Save
             <span className="text-xs">↗</span>
