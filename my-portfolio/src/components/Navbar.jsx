@@ -41,7 +41,7 @@ const Navbar = () => {
     <>
       <div
         id="navbar-container"
-        className="fixed top-1 left-0 z-20 h-[60px] sm:h-[70px] w-full flex justify-center items-end"
+        className="fixed top-1 left-0  z-20 h-[60px] sm:h-[70px]  w-full  flex justify-center items-end"
       >
         <motion.div
           id="navbar"

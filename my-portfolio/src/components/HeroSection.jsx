@@ -108,7 +108,7 @@ const HeroSection = () => {
           <div className="absolute -top-10 right-6 hidden h-24 w-24 rounded-full bg-gradient-to-br from-purple-500/60 via-blue-500/40 to-teal-400/40 blur-2xl md:block" />
           <div className="absolute bottom-[-30px] left-10 hidden h-28 w-28 rounded-full bg-gradient-to-tr from-purple-500/40 via-fuchsia-500/30 to-transparent blur-2xl md:block" />
 
-          <div className="relative rounded-[32px] border border-white/70 bg-white/95 p-3 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-white/10">
+          <div className="relative hidden md:block rounded-[32px] border border-white/70 bg-white/95 p-3 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-white/10">
             <PixelatedCanvas
               src="./profile.png"
               width={420}
