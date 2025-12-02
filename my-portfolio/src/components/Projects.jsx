@@ -132,7 +132,7 @@ const Projects = () => {
                     </div>
                   </div>
 
-                  <div className="relative overflow-hidden rounded-[24px] border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent">
+                  {/* <div className="relative overflow-hidden rounded-[24px] border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent">
                     <img
                       src={project.image}
                       alt={project.name}
@@ -140,7 +140,7 @@ const Projects = () => {
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </div>
+                  </div> */}
                 </div>
               </motion.article>
             ))}
