@@ -48,10 +48,10 @@ const Navbar = () => {
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="relative w-[92%] max-w-6xl"
+          className="relative w-[85%] sm:w-[92%] max-w-6xl"
         >
           <div className="modern-gradient-border absolute inset-0 rounded-[30px]" />
-          <div className="modern-gradient-halo absolute -inset-3 rounded-[36px]" />
+          <div className="modern-gradient-halo absolute -inset-1 sm:-inset-3 rounded-[36px]" />
           <div className="absolute inset-[1px] rounded-[28px] bg-white/95 shadow-[0_12px_45px_rgba(148,163,255,0.25)] backdrop-blur-2xl dark:bg-black/85 dark:shadow-[0_12px_45px_rgba(99,102,241,0.35)]" />
 
           <div className="relative flex items-center gap-4 rounded-[28px] px-4 py-3 text-[12px] text-slate-800 dark:text-gray-200 sm:px-6">
@@ -300,11 +300,10 @@ const Navbar = () => {
                 <Link
                   to={item.to}
                   onClick={hideSidebar}
-                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 font-medium ${
-                    item.cta
-                      ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg hover:from-blue-500 hover:to-purple-500"
-                      : "text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-800 hover:text-purple-600 dark:hover:text-purple-400"
-                  }`}
+                  className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 font-medium ${item.cta
+                    ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg hover:from-blue-500 hover:to-purple-500"
+                    : "text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-800 hover:text-purple-600 dark:hover:text-purple-400"
+                    }`}
                 >
                   <span className="text-xl">{item.icon}</span>
                   <span>{item.label}</span>
