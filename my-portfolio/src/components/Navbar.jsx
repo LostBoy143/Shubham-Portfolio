@@ -96,6 +96,14 @@ const Navbar = () => {
                 View Showcase
                 <span className="text-sm">↗</span>
               </Link>
+              <a
+                href="/Resume-SHUBHAM_SINGH.pdf"
+                download
+                className="inline-flex items-center gap-2 rounded-full border border-purple-200/50 bg-white/70 px-4 py-2 text-xs font-semibold text-slate-600 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-gray-100 dark:hover:border-purple-400"
+              >
+                Resume
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+              </a>
               <button
                 onClick={toggleTheme}
                 className="flex h-8 w-8 items-center justify-center rounded-xl border border-purple-200/50 bg-white/70 text-slate-600 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-gray-100 dark:hover:border-purple-400"
@@ -289,6 +297,7 @@ const Navbar = () => {
                 icon: "📁",
                 cta: true,
               },
+              { to: "/Resume-SHUBHAM_SINGH.pdf", label: "Resume", icon: "📄", download: true },
               { to: "/#contact-section", label: "Contact", icon: "📧" },
             ].map((item, index) => (
               <motion.div
@@ -300,6 +309,8 @@ const Navbar = () => {
                 <Link
                   to={item.to}
                   onClick={hideSidebar}
+                  download={item.download}
+                  target={item.download ? "_blank" : undefined}
                   className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 font-medium ${item.cta
                     ? "bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg hover:from-blue-500 hover:to-purple-500"
                     : "text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-800 hover:text-purple-600 dark:hover:text-purple-400"

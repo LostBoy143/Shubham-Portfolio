@@ -52,7 +52,7 @@ const Skills = () => {
   return (
     <div
       id="skills"
-      className="min-h-[300px] flex flex-col justify-center items-center pb-5 scroll-mt-20"
+      className="min-h-[300px] flex flex-col justify-center items-center py-12 scroll-mt-20"
     >
       {/* Title */}
       <motion.p

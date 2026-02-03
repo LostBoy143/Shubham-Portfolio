@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const HeroSection = () => {
   return (
     <div id="hero-section" className="relative scroll-mt-24 mt-4">
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 py-20 md:flex-row md:items-center md:gap-24">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pt-32 pb-4 md:flex-row md:items-center md:gap-16">
         <div className="pointer-events-none absolute -top-32 left-10 hidden h-64 w-64 rounded-full bg-purple-500/25 blur-3xl dark:block" />
         <div className="pointer-events-none absolute -bottom-28 right-16 hidden h-72 w-72 rounded-full bg-blue-500/20 blur-3xl dark:block" />
 
@@ -70,7 +70,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-4 rounded-3xl border border-purple-100/60 bg-white/95 p-4 text-center shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/5"
+            className="hidden md:grid grid-cols-3 gap-4 rounded-3xl border border-purple-100/60 bg-white/95 p-4 text-center shadow-lg backdrop-blur dark:border-white/10 dark:bg-white/5"
           >
             <div>
               <p className="font-heading text-2xl text-slate-900 dark:text-white">

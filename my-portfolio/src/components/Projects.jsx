@@ -9,11 +9,11 @@ const Projects = () => {
   return (
     <section
       id="projects-section"
-      className="relative px-6 py-20 sm:px-12 lg:px-24 scroll-mt-20"
+      className="relative px-6 py-12 sm:px-12 lg:px-24 scroll-mt-20"
     >
       <div className="pointer-events-none absolute inset-x-0 top-10 h-72 rounded-full bg-gradient-to-r from-purple-500/12 via-blue-500/12 to-emerald-400/12 blur-3xl" />
 
-      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-14">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
