@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 const Experience = () => {
   const experiences = [
     {
-      company: "Rashi Technologies",
+      company: "Rashi Technologies (Meri Bhakti)",
       role: "Full Stack Engineer",
       duration: "Feb 2025 — Present",
-      logo: "./rashi_logo.jpg",
+      logo: "/rashi_logo.jpg",
       summary:
         "Leading end-to-end development of analytics experiences and AI-driven automations for enterprise clients.",
       achievements: [
@@ -18,29 +18,16 @@ const Experience = () => {
       ],
     },
     {
-      company: "Freelance Collaborations",
-      role: "Product Engineer",
-      duration: "Jul 2024 — Feb 2025",
-      logo: "./freelance.png",
+      company: "AI Social Studio",
+      role: "Founder & Lead Engineer",
+      duration: "Jan 2024 — Present",
+      logo: "/projects/ai-social.png", // Using the project image as logo or placeholder
       summary:
-        "Partnered with founders to launch marketing sites, SaaS MVPs, and custom internal tools under tight timelines.",
+        "Bootstrapped a SaaS platform from zero to launch. Built, hosted, and marketed a full-stack AI content generation tool.",
       achievements: [
-        "Delivered brand-heavy storytelling sites with 3D and motion that drove +60% signups for early-stage startups.",
-        "Implemented real-time dashboards, billing, and auth using serverless (Supabase/Firebase) and Stripe integration.",
-        "Crafted AI copilots (chat & content) using OpenAI/LangChain to automate support and content workflows.",
-      ],
-    },
-    {
-      company: "Open Source & Side Projects",
-      role: "Builder & Maintainer",
-      duration: "2023 — Present",
-      logo: "./github-logo.png",
-      summary:
-        "Experimenting with immersive UX, AI-native tooling, and documenting learnings for the community.",
-      achievements: [
-        "Maintaining AI code-reviewer that lint/auto-fixes repo PRs, now adopted by 400+ developers.",
-        "Launched open boilerplates with tRPC, Prisma, and Vercel edge functions to help teams ship faster.",
-        "Published UI experiments mixing Three.js, GLSL shaders, and Framer Motion for futuristic landing pages.",
+        "Architected a scalable multi-tenant SaaS using Next.js, Node.js, and MongoDB, handling auth, payments, and AI generation.",
+        "Configured complete DevOps pipeline: VPS hosting, Nginx reverse proxy, SSL, and CI/CD for zero-downtime deployments.",
+        "Integrated multiple LLMs (OpenAI/Gemini) to generate high-quality social media content, optimizing costs and latency.",
       ],
     },
   ];
@@ -105,7 +92,7 @@ const Experience = () => {
                 </div>
 
                 <div className="relative flex flex-col items-center gap-4 self-start lg:self-center">
-                  <div className="hidden h-10 w-10 rounded-full border border-purple-200/60 bg-white/90 p-2 shadow-sm dark:border-white/10 dark:bg-white/10 lg:flex">
+                  <div className="hidden h-16 w-16 items-center justify-center rounded-2xl border border-purple-200/60 bg-white p-2 shadow-md dark:border-white/10 dark:bg-white/5 lg:flex">
                     <img src={exp.logo} alt={`${exp.company} logo`} className="h-full w-full object-contain" />
                   </div>
                   <div className="hidden flex-1 border-l border-dashed border-purple-200/70 dark:border-white/20 lg:block" />

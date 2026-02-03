@@ -1,10 +1,11 @@
 import "./App.css";
-import {BrowserRouter as Router,Routes,Route, useLocation} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ProjectsPage from "./components/ProjectsPage";
+import ProjectDetails from "./components/ProjectDetails";
 import { useEffect } from "react";
 
 function ScrollToSection() {
@@ -33,10 +34,11 @@ function App() {
         <ScrollToSection />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route path="/projects" element={<ProjectsPage/>}/>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </ThemeProvider>
   );

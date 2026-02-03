@@ -30,6 +30,8 @@ export const PixelatedCanvas = ({
 }) => {
   const canvasRef = React.useRef(null);
   const samplesRef = React.useRef([]);
+  const observerRef = React.useRef(null);
+  const isVisibleRef = React.useRef(false);
   const dimsRef = React.useRef(null);
   const targetMouseRef = React.useRef({
     x: -9999,
@@ -246,6 +248,7 @@ export const PixelatedCanvas = ({
       if (!canvasEl) return;
 
       if (!interactive) {
+        // ... (static render logic unchanged) ...
         const ctx = canvasEl.getContext("2d");
         const dims = dimsRef.current;
         const samples = samplesRef.current;
@@ -303,6 +306,12 @@ export const PixelatedCanvas = ({
       canvasEl.addEventListener("pointerleave", onPointerLeave);
 
       const animate = () => {
+        if (isCancelled) return;
+        if (!isVisibleRef.current) {
+          rafRef.current = null;
+          return; // Stop loop if offscreen
+        }
+
         const now = performance.now();
         const minDelta = 1000 / Math.max(1, maxFps);
         if (now - lastFrameRef.current < minDelta) {
@@ -350,6 +359,10 @@ export const PixelatedCanvas = ({
           if (s.drop || s.a <= 0) continue;
           let drawX = s.x + cellSize / 2;
           let drawY = s.y + cellSize / 2;
+
+          // Optimization: Skip complex math if activity is low and jitter is 0 (check activity)
+          // But here we just run logic as implies "logic preservation"
+
           const dx = drawX - mx;
           const dy = drawY - my;
           const dist2 = dx * dx + dy * dy;
@@ -383,6 +396,7 @@ export const PixelatedCanvas = ({
             }
           }
 
+
           ctx.globalAlpha = s.a;
           ctx.fillStyle = `rgb(${s.r}, ${s.g}, ${s.b})`;
           if (shape === "circle") {
@@ -399,10 +413,25 @@ export const PixelatedCanvas = ({
         rafRef.current = requestAnimationFrame(animate);
       };
 
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      rafRef.current = requestAnimationFrame(animate);
+      // Set up IntersectionObserver
+      observerRef.current = new IntersectionObserver((entries) => {
+        const entry = entries[0];
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          if (!rafRef.current) {
+            lastFrameRef.current = performance.now();
+            animate();
+          }
+        }
+        // If not intersecting, animate() loop detects isVisibleRef.current false and stops itself.
+      }, { threshold: 0 });
+      observerRef.current.observe(canvasEl);
+
+      // Start initial animation if visible (observer will trigger, but good to have fallback/check)
+      // The observer triggers initially immediately in most browsers.
 
       const cleanup = () => {
+        if (observerRef.current) observerRef.current.disconnect();
         canvasEl.removeEventListener("pointermove", onPointerMove);
         canvasEl.removeEventListener("pointerenter", onPointerEnter);
         canvasEl.removeEventListener("pointerleave", onPointerLeave);

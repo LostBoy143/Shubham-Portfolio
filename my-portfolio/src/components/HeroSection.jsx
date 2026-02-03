@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
-import { PixelatedCanvas } from "./Canvas";
+
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -109,20 +109,10 @@ const HeroSection = () => {
           <div className="absolute bottom-[-30px] left-10 hidden h-28 w-28 rounded-full bg-gradient-to-tr from-purple-500/40 via-fuchsia-500/30 to-transparent blur-2xl md:block" />
 
           <div className="relative hidden md:block rounded-[32px] border border-white/70 bg-white/95 p-3 shadow-2xl backdrop-blur dark:border-white/10 dark:bg-white/10">
-            <PixelatedCanvas
+            <img
               src="./profile.png"
-              width={420}
-              height={480}
-              cellSize={4}
-              dotScale={0.92}
-              shape="circle"
-              backgroundColor="rgba(255,255,255,0)"
-              tintColor="#8b5cf6"
-              tintStrength={0.15}
-              dropoutStrength={0.05}
-              distortionStrength={1.2}
-              responsive
-              className="h-[480px] w-[420px] rounded-[28px]"
+              alt="Profile"
+              className="h-[480px] w-[420px] rounded-[28px] object-cover"
             />
 
             <motion.div

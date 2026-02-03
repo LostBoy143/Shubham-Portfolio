@@ -1,79 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "../contexts/ThemeContext";
+import projects from "../data/projects";
 
-const projects = [
-  {
-    id: 1,
-    name: "AI Code Reviewer",
-    image: "./code-review.png",
-    description:
-      "A web tool that uses AI to analyze code snippets and provide instant feedback on quality, performance, and best practices.",
-    tech: [
-      "React",
-      "ThreeJs",
-      "Tailwind",
-      "Gemini",
-      "Nodejs",
-      "Expressjs",
-      "Github",
-      "Vercel",
-      "render",
-    ],
-    link: "https://ai-code-review-blush.vercel.app/",
-    category: "Full Stack",
-    featured: true,
-  },
-  {
-    id: 2,
-    name: "DigiGrove",
-    image: "./digigrove.png",
-    description:
-      "A landing page for a business with great animations and design.",
-    tech: ["React", "Tailwind", "Github", "Vercel"],
-    link: "https://extraordinary-sunflower-12d7fc.netlify.app/",
-    category: "Frontend",
-    featured: false,
-  },
-  {
-    id: 3,
-    name: "Attyre",
-    image: "./att-img.png",
-    description:
-      "An AI-powered web app that recommends optimal clothing color palettes based on a user's skin tone, hair, and eye color using image analysis and color theory.",
-    tech: ["React", "Tailwind", "Github", "Vercel"],
-    link: "https://attyre-assignment.vercel.app/",
-    category: "AI/ML",
-    featured: true,
-  },
-  {
-    id: 4,
-    name: "Zappy",
-    image: "./zappy.png",
-    description:
-      "An online food delivery platform built for speed and simplicity, offering real-time restaurant browsing, order tracking, and a seamless checkout experience.",
-    tech: ["React", "Tailwind", "Nodejs", "Expressjs", "Mongodb", "Stripe"],
-    link: "https://github.com/LostBoy143/zappy",
-    category: "Full Stack",
-    featured: true,
-  },
-];
 
-const categories = ["All", "Full Stack", "Frontend", "AI/ML"];
+
+
 
 const ProjectsPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const { isDark } = useTheme();
+
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const filteredProjects =
-    selectedCategory === "All"
-      ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -119,37 +62,17 @@ const ProjectsPage = () => {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex flex-wrap justify-center gap-3"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`rounded-full border px-5 py-2 text-xs font-semibold transition-all ${
-                selectedCategory === category
-                  ? "border-transparent bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg"
-                  : "border-purple-200/60 bg-white/80 text-slate-600 hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-slate-200"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
+
 
         <AnimatePresence mode="wait">
           <motion.div
-            key={selectedCategory}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
             exit="hidden"
             className="grid gap-8 lg:grid-cols-2"
           >
-            {filteredProjects.map((project, index) => (
+            {projects.map((project, index) => (
               <motion.article
                 key={project.id}
                 variants={itemVariants}
@@ -160,7 +83,7 @@ const ProjectsPage = () => {
                     Featured
                   </span>
                 )}
-                <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
+                <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr] lg:items-center">
                   <div className="space-y-4">
                     <div className="flex flex-col gap-2">
                       <h3 className="font-heading text-2xl text-slate-900 dark:text-white">
@@ -171,7 +94,7 @@ const ProjectsPage = () => {
                       </span>
                     </div>
                     <p className="text-sm text-slate-600 dark:text-slate-300">
-                      {project.description}
+                      {project.description.substring(0, 100)}...
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
@@ -184,33 +107,38 @@ const ProjectsPage = () => {
                       ))}
                     </div>
                     <div className="flex flex-wrap gap-3 pt-2">
+                      <Link
+                        to={`/project/${project.id}`}
+                        className="inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-white/80 px-4 py-2 text-xs font-semibold text-purple-600 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-purple-200 whitespace-nowrap"
+                      >
+                        Read More
+                      </Link>
                       <a
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-white/80 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-slate-200"
+                        className="inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-white/80 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-slate-200 whitespace-nowrap"
                       >
                         Visit live ↗
                       </a>
-                      {/* <button className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:-translate-y-[2px] dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
-                        Request walkthrough
-                      </button> */}
                     </div>
                   </div>
-                  {/* <div className="relative overflow-hidden rounded-[24px] border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent">
+                  <div className="relative overflow-hidden rounded-xl border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent lg:aspect-video">
                     <img
-                      src={project.image}
+                      src={project.image.startsWith('/') ? project.image : '/' + project.image}
                       alt={project.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </div> */}
+                  </div>
                 </div>
               </motion.article>
             ))}
           </motion.div>
         </AnimatePresence>
+
+
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -243,7 +171,7 @@ const ProjectsPage = () => {
           </Link>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

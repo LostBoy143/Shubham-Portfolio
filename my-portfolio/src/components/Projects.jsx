@@ -3,50 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const data = [
-  {
-    name: "AI Code Reviewer",
-    image: "./code-review.png",
-    description:
-      "A web tool that uses AI to analyze code snippets and provide instant feedback on quality, performance, and best practices.",
-    tech: [
-      "React",
-      "ThreeJs",
-      "Tailwind",
-      "Gemini",
-      "Nodejs",
-      "Expressjs",
-      "Github",
-      "Vercel",
-      "render",
-    ],
-    link: "https://ai-code-review-blush.vercel.app/",
-  },
-  {
-    name: "DigiGrove",
-    image: "./digigrove.png",
-    description:
-      "A landing page for a business with great animations and design.",
-    tech: ["React", "Tailwind", "Github", "Vercel"],
-    link: "https://extraordinary-sunflower-12d7fc.netlify.app/",
-  },
-  {
-    name: "Attyre",
-    image: "./att-img.png",
-    description:
-      "An AI-powered web app that recommends optimal clothing color palettes based on a user's skin tone, hair, and eye color using image analysis and color theory.",
-    tech: ["React", "Tailwind", "Github", "Vercel"],
-    link: "https://attyre-assignment.vercel.app/",
-  },
-  {
-    name: "Zappy",
-    image: "./zappy.png",
-    description:
-      "An online food delivery platform built for speed and simplicity, offering real-time restaurant browsing, order tracking, and a seamless checkout experience.",
-    tech: ["React", "Tailwind", "Nodejs", "Expressjs", "Mongodb", "Stripe"],
-    link: "https://github.com/LostBoy143/zappy",
-  },
-];
+import projects from "../data/projects";
 
 const Projects = () => {
   return (
@@ -84,7 +41,7 @@ const Projects = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            {data.slice(0, 2).map((project, idx) => (
+            {projects.slice(0, 2).map((project, idx) => (
               <motion.article
                 key={project.name}
                 initial={{ opacity: 0, y: 30 }}
@@ -94,7 +51,7 @@ const Projects = () => {
                 className="group relative overflow-hidden rounded-[28px] border border-white/60 bg-white/95 p-6 shadow-[0_20px_60px_rgba(99,102,241,0.2)] backdrop-blur transition hover:shadow-[0_24px_70px_rgba(99,102,241,0.3)] dark:border-white/10 dark:bg-white/5 dark:hover:shadow-[0_24px_70px_rgba(99,102,241,0.4)]"
               >
                 <div className="absolute -top-20 right-0 h-40 w-40 rounded-full bg-gradient-to-br from-purple-500/20 via-blue-500/15 to-teal-400/15 blur-2xl" />
-                <div className="relative grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+                <div className="relative grid gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
                   <div className="space-y-4">
                     <div className="flex flex-col gap-1 text-left">
                       <p className="font-heading text-2xl text-slate-900 dark:text-white">
@@ -104,9 +61,7 @@ const Projects = () => {
                         Highlighted project
                       </p>
                     </div>
-                    <p className="text-sm text-slate-600 dark:text-slate-300">
-                      {project.description}
-                    </p>
+
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech) => (
                         <span
@@ -122,25 +77,22 @@ const Projects = () => {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 rounded-full border border-purple-200/70 bg-white/80 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-slate-100"
+                        className="inline-flex items-center gap-2 rounded-full border border-purple-200/70 bg-white/80 px-4 py-2 text-xs font-semibold text-slate-700 transition hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-slate-100 whitespace-nowrap"
                       >
                         Visit project ↗
                       </a>
-                      <button className="inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-4 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:-translate-y-[2px] dark:border-white/10 dark:bg-white/10 dark:text-slate-200">
-                        Case study (coming soon)
-                      </button>
                     </div>
                   </div>
 
-                  {/* <div className="relative overflow-hidden rounded-[24px] border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent">
+                  <div className="relative overflow-hidden rounded-xl border border-purple-200/60 bg-gradient-to-br from-purple-500/15 via-blue-500/10 to-transparent lg:aspect-video">
                     <img
-                      src={project.image}
+                      src={project.image.startsWith('/') ? project.image : '/' + project.image}
                       alt={project.name}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </div> */}
+                  </div>
                 </div>
               </motion.article>
             ))}
@@ -153,7 +105,7 @@ const Projects = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-4"
           >
-            {data.slice(2, 4).map((project) => (
+            {projects.slice(2, 4).map((project) => (
               <article
                 key={project.name}
                 className="group flex flex-col gap-4 rounded-[24px] border border-white/60 bg-white/95 p-5 shadow-lg transition hover:border-purple-400/70 hover:shadow-[0_20px_50px_rgba(99,102,241,0.2)] dark:border-white/10 dark:bg-white/5"
@@ -176,9 +128,7 @@ const Projects = () => {
                     View ↗
                   </a>
                 </div>
-                <p className="text-sm text-slate-600 dark:text-slate-300">
-                  {project.description}
-                </p>
+
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
