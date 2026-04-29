@@ -1,14 +1,14 @@
 export const siteConfig = {
   name: "Shubham Singh",
-  title: "Shubham Singh | Full-Stack Developer and AI Engineer",
+  title: "Shubham Singh | AI SaaS Founder & Full-Stack Developer",
   description:
-    "Shubham Singh is a full-stack developer and AI engineer who builds AI-powered web products from scratch, including AI Social Studio and BolChat.",
+    "Shubham Singh is an AI SaaS Founder and Full-Stack Developer. Creator of BolChat and AI Social Studio, specializing in building agentic AI systems and scalable web products.",
   siteUrl: import.meta.env.VITE_SITE_URL || "",
   image: "/profile.png",
   email: "shubham@bolchat.tech",
-  jobTitle: "Full-Stack Developer and AI Engineer",
+  jobTitle: "AI SaaS Founder & Full-Stack Developer",
   about:
-    "I enjoy building products from scratch and bringing ideas to life. I work across interfaces, backend systems, deployment, RAG, and agent-based AI applications, with a focus on products that are simple, useful, and reliable.",
+    "I am a founder and full-stack engineer who enjoys taking ambitious ideas from zero to one. I work across intuitive user interfaces, advanced backend systems, RAG pipelines, and agent-based AI applications, with a focus on building products that are robust, scalable, and user-centric.",
   sameAs: [
     "https://www.linkedin.com/in/shubham-singh-35153122b/",
     "https://github.com/shubh-ships",

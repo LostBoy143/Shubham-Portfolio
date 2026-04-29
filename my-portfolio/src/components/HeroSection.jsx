@@ -25,13 +25,13 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-heading text-4xl font-semibold text-slate-900 dark:text-white sm:text-5xl lg:text-[58px] lg:leading-[1.05]"
+            className="font-heading text-3xl font-semibold text-slate-900 dark:text-white sm:text-4xl lg:text-5xl lg:leading-[1.1]"
           >
-            Shubham Singh builds{" "}
+            Hi, I'm Shubham. I engineer{" "}
             <span className="bg-gradient-to-r from-purple-500 via-blue-500 to-teal-400 bg-clip-text text-transparent">
-              AI-powered web products
+              AI-driven products
             </span>{" "}
-            from idea to production.
+            for the modern web.
           </motion.h1>
 
           <motion.p
@@ -40,11 +40,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="max-w-xl text-base text-slate-600 dark:text-slate-300 sm:text-lg"
           >
-            I am a full-stack developer and AI engineer who enjoys building
-            products from scratch and bringing ideas to life. I built AI Social
-            Studio and BolChat from idea to production, working across UI,
-            backend systems, deployment, RAG, agent-based systems, and technical
-            SEO.
+            I'm a full-stack developer and AI engineer specializing in taking ambitious ideas from zero to one. I've architected and launched platforms like BolChat and AI Social Studio—handling everything from seamless UIs to advanced RAG and agentic backends.
           </motion.p>
 
           <motion.div
