@@ -48,7 +48,7 @@ const DownloadResumeButton = () => {
       </div>
 
       <motion.button
-        onClick={() => (window.location.href = "mailto:singhshubham620278@gmail.com")}
+        onClick={() => (window.location.href = "mailto:shubham@bolchat.tech")}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="hidden sm:inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-3 py-2 text-[11px] font-semibold text-slate-600 shadow-[0_10px_30px_rgba(99,102,241,0.2)] transition hover:-translate-y-[2px] hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-purple-200"

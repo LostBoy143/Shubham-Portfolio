@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
 import { motion } from "framer-motion";
+import { siteConfig } from "../seo/site";
 
 const footerLinks = [
   {
@@ -13,18 +14,14 @@ const footerLinks = [
   },
   {
     title: "Connect",
-    items: [
-      { label: "LinkedIn", href: "https://www.linkedin.com/in/shubham-singh-35153122b/" },
-      { label: "GitHub", href: "https://github.com/LostBoy143" },
-      { label: "Instagram", href: "https://www.instagram.com/intro_vertedguyy/" },
-    ],
+    items: siteConfig.socialLinks,
   },
   {
     title: "Resources",
     items: [
       { label: "Resume", href: "/Resume-SHUBHAM_SINGH.pdf", external: true },
       { label: "Case Studies", href: "/projects" },
-      { label: "Email", href: "mailto:singhshubham620278@gmail.com" },
+      { label: "Email", href: `mailto:${siteConfig.email}` },
     ],
   },
 ];
@@ -51,7 +48,7 @@ const Footer = () => {
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <a
-                  href="mailto:singhshubham620278@gmail.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="inline-flex items-center gap-2 rounded-full border border-purple-200/60 bg-white/80 px-4 py-2 text-xs font-semibold text-purple-600 shadow-sm transition hover:-translate-y-[2px] hover:border-purple-400 hover:text-purple-500 dark:border-white/10 dark:bg-white/10 dark:text-purple-200"
                 >
                   Email me ↗

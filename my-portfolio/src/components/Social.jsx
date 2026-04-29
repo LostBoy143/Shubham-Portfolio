@@ -1,31 +1,23 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { motion } from "framer-motion";
+import { siteConfig } from "../seo/site";
 
 const Social = () => {
-  const socialButtons = [
-    {
-      href: "https://www.linkedin.com/in/shubham-singh-35153122b/",
-      label: "LinkedIn",
-      handle: "Connect professionally",
-      accent: "from-[#7f5af0] to-[#2cb1ff]",
-      icon: "./linkedin.png",
-    },
-    {
-      href: "https://github.com/LostBoy143",
-      label: "GitHub",
-      handle: "Explore the code",
-      accent: "from-[#9333ea] to-[#14b8a6]",
-      icon: "./github-logo.png",
-    },
-    {
-      href: "https://www.instagram.com/intro_vertedguyy/",
-      label: "Instagram",
-      handle: "Design + daily drops",
-      accent: "from-[#ec4899] to-[#f97316]",
-      icon: "./instagram.png",
-    },
+  const accents = [
+    "from-[#7f5af0] to-[#2cb1ff]",
+    "from-[#9333ea] to-[#14b8a6]",
+    "from-[#0f766e] to-[#22c55e]",
+    "from-[#111827] to-[#6b7280]",
+    "from-[#2563eb] to-[#06b6d4]",
+    "from-[#f97316] to-[#ef4444]",
+    "from-[#ec4899] to-[#f97316]",
   ];
+
+  const socialButtons = siteConfig.socialLinks.map((item, index) => ({
+    ...item,
+    accent: accents[index % accents.length],
+  }));
 
   return (
     <section
@@ -83,11 +75,17 @@ const Social = () => {
                   <div className="flex w-full items-center justify-between rounded-[22px] bg-white/90 px-4 py-3 backdrop-blur dark:bg-black/60">
                     <div className="flex items-center gap-3">
                       <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-white/80 p-1 backdrop-blur dark:bg-white/10">
-                        <img
-                          src={item.icon}
-                          alt={item.label}
-                          className="h-6 w-6 object-contain"
-                        />
+                        {item.icon ? (
+                          <img
+                            src={item.icon}
+                            alt={item.label}
+                            className="h-6 w-6 object-contain"
+                          />
+                        ) : (
+                          <span className="text-xs font-bold text-purple-600 dark:text-purple-200">
+                            {item.initials}
+                          </span>
+                        )}
                       </span>
                       <div>
                         <p className="font-heading text-base text-gray-900 dark:text-white">
@@ -133,12 +131,12 @@ const Social = () => {
                   <span className="text-xs text-purple-500">Tap to call</span>
                 </a>
                 <a
-                  href="mailto:singhshubham620278@gmail.com"
+                  href={`mailto:${siteConfig.email}`}
                   className="flex items-center justify-between rounded-2xl border border-gray-200/60 bg-white px-4 py-3 text-sm font-semibold text-gray-800 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/10 dark:text-gray-100"
                 >
                   <span className="flex items-center gap-2">
                     <img src="./gmail.png" alt="email" className="h-6" />
-                    singhshubham620278@gmail.com
+                    {siteConfig.email}
                   </span>
                   <span className="text-xs text-purple-500">Compose ↗</span>
                 </a>

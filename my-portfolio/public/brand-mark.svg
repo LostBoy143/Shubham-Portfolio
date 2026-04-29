@@ -1,0 +1,21 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Shubham Singh brand mark</title>
+  <desc id="desc">A modern S monogram for Shubham Singh with connected AI nodes.</desc>
+  <rect width="512" height="512" rx="120" fill="#050816"/>
+  <path d="M96 358C122 408 175 436 247 436C337 436 398 389 398 319C398 254 350 225 271 205L227 194C185 184 162 172 162 144C162 112 193 92 239 92C285 92 319 111 342 150L392 119C362 67 308 40 241 40C161 40 105 84 105 149C105 210 149 240 225 259L269 270C318 282 340 297 340 326C340 361 305 383 250 383C198 383 158 362 138 321L96 358Z" fill="url(#paint0_linear)"/>
+  <path d="M166 329C190 352 219 364 254 364C295 364 319 349 319 327C319 307 302 298 258 287L216 277C144 260 84 232 84 151C84 76 149 24 241 24C318 24 381 57 416 118L341 165C320 126 286 108 240 108C202 108 180 122 180 144C180 161 196 169 238 179L282 190C360 209 416 244 416 319C416 399 349 452 247 452C167 452 103 420 72 363L166 329ZM142 354C168 389 205 407 247 407C319 407 371 371 371 319C371 270 334 247 260 229L216 218C156 204 135 181 135 149C135 104 177 69 241 69C289 69 329 86 356 121L342 130C318 94 283 77 240 77C181 77 143 107 143 149C143 178 164 196 218 210L262 221C340 240 379 267 379 319C379 377 324 415 247 415C199 415 158 397 128 361L142 354Z" fill="white" fill-opacity="0.18"/>
+  <circle cx="370" cy="142" r="23" fill="#2DD4BF"/>
+  <circle cx="422" cy="258" r="18" fill="#60A5FA"/>
+  <circle cx="338" cy="394" r="16" fill="#A78BFA"/>
+  <path d="M370 142L422 258L338 394" stroke="white" stroke-opacity="0.35" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="370" cy="142" r="8" fill="#050816"/>
+  <circle cx="422" cy="258" r="6" fill="#050816"/>
+  <circle cx="338" cy="394" r="5" fill="#050816"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="96" y1="40" x2="421" y2="429" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A78BFA"/>
+      <stop offset="0.46" stop-color="#60A5FA"/>
+      <stop offset="1" stop-color="#2DD4BF"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ProjectsPage from "./components/ProjectsPage";
 import ProjectDetails from "./components/ProjectDetails";
+import Seo from "./components/Seo";
 import { useEffect } from "react";
 
 function ScrollToSection() {
@@ -31,6 +32,7 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
+        <Seo />
         <ScrollToSection />
         <Navbar />
         <Routes>

@@ -1,17 +1,14 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTheme } from "../contexts/ThemeContext";
 import projects from "../data/projects";
+import { siteConfig } from "../seo/site";
 
 
 
 
 
 const ProjectsPage = () => {
-  const { isDark } = useTheme();
-
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -72,7 +69,7 @@ const ProjectsPage = () => {
             exit="hidden"
             className="grid gap-8 lg:grid-cols-2"
           >
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <motion.article
                 key={project.id}
                 variants={itemVariants}
@@ -155,7 +152,7 @@ const ProjectsPage = () => {
             UI, and AI pieces needed to ship fast.
           </p>
           <a
-            href="mailto:singhshubham620278@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="mt-4 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 px-6 py-2 text-xs font-semibold text-white shadow-lg transition hover:scale-[1.03] hover:from-blue-500 hover:to-purple-500"
           >
             Start a build ↗

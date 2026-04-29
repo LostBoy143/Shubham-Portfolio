@@ -1,6 +1,5 @@
 import HeroSection from "./HeroSection";
 import Skills from "./Skills";
-import Button from "./Button";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Contact from "./Contact";
@@ -11,7 +10,6 @@ const Home = () => {
     <div>
       <HeroSection />
       <Skills />
-      {/* <Button /> */}
       <Experience />
       <Projects />
       <Contact />

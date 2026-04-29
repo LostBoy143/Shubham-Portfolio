@@ -55,13 +55,20 @@ const Navbar = () => {
           <div className="absolute inset-[1px] rounded-[28px] bg-white/95 shadow-[0_12px_45px_rgba(148,163,255,0.25)] backdrop-blur-2xl dark:bg-black/85 dark:shadow-[0_12px_45px_rgba(99,102,241,0.35)]" />
 
           <div className="relative flex items-center gap-4 rounded-[28px] px-4 py-3 text-[12px] text-slate-800 dark:text-gray-200 sm:px-6">
-            <div className="hidden sm:flex w-56 flex-col gap-1">
-              <span className="font-heading text-sm text-slate-900 dark:text-white">
-                Shubham Singh
-              </span>
-              <span className="text-xs text-slate-500 dark:text-slate-400">
-                Full Stack Engineer · AI Systems
-              </span>
+            <div className="hidden sm:flex w-60 items-center gap-3">
+              <img
+                src="/brand-mark.svg"
+                alt="Shubham Singh logo"
+                className="h-10 w-10 rounded-xl shadow-sm"
+              />
+              <div className="flex flex-col gap-1">
+                <span className="font-heading text-sm text-slate-900 dark:text-white">
+                  Shubham Singh
+                </span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  Full Stack Engineer · AI Systems
+                </span>
+              </div>
             </div>
 
             <nav className="hidden sm:flex flex-1 items-center justify-center gap-1">
@@ -160,8 +167,15 @@ const Navbar = () => {
                   />
                 </svg>
               </button>
-              <span className="font-heading text-sm text-slate-800 dark:text-gray-100">
-                Shubham Singh
+              <span className="inline-flex items-center gap-2">
+                <img
+                  src="/brand-mark.svg"
+                  alt="Shubham Singh logo"
+                  className="h-8 w-8 rounded-lg"
+                />
+                <span className="font-heading text-sm text-slate-800 dark:text-gray-100">
+                  Shubham Singh
+                </span>
               </span>
               <button
                 onClick={toggleTheme}
@@ -221,10 +235,10 @@ const Navbar = () => {
           {/* Sidebar Header */}
           <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-800">
             <img
-              src="./favicon.png"
-              alt="logo"
+              src="/brand-mark.svg"
+              alt="Shubham Singh logo"
               loading="lazy"
-              className="h-8"
+              className="h-10 w-10 rounded-xl"
             />
             <div className="flex items-center gap-3">
               <button
